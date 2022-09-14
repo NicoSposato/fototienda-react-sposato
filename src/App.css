@@ -1,3 +1,14 @@
+/* ---------- FUENTE ---------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;600;700;800&display=swap');
+
+/* ---------- GLOBAL ---------- */
+
+/* Reset de margenes*/
+*{
+    box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +46,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body{
+  font-family: 'Nunito', sans-serif;
+}
+
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.fondo__black {
+  background-color: black;
 }

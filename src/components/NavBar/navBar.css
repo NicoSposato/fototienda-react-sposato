@@ -1,0 +1,17 @@
+nav ul {
+    display: flex;
+    gap: 50px;
+    text-align: justify;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit; /* color heredado*/
+    font-weight: 500; /* grosor de trazo */
+    font-size: 18px;
+}
