@@ -1,4 +1,5 @@
 import "./footer.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Footer() {
     return (
@@ -8,15 +9,7 @@ function Footer() {
             </div>
             <div className="footer__social">
                 <p>Síguenos </p>
-                <div>
-                    <i className="fa-brands fa-twitter"></i>
-                </div>
-                <div>
-                    <i className="fa-brands fa-facebook"></i>
-                </div>
-                <div>
-                    <i className="fa-brands fa-instagram"></i>
-                </div>
+               
             </div>
         </div>
     );
