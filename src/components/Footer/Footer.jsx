@@ -1,5 +1,5 @@
 import "./footer.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { TiSocialFacebookCircular, TiSocialTwitterCircular, TiSocialVimeoCircular} from "react-icons/ti";
 
 function Footer() {
     return (
@@ -9,7 +9,15 @@ function Footer() {
             </div>
             <div className="footer__social">
                 <p>Síguenos </p>
-               
+                <div>
+                    <a href="#"><TiSocialFacebookCircular /></a>
+                </div>
+                <div>
+                    <a href="#"><TiSocialTwitterCircular /></a>
+                </div>
+                <div>
+                    <a href="#"><TiSocialVimeoCircular /></a>
+                </div>
             </div>
         </div>
     );

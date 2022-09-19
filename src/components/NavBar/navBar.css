@@ -1,7 +1,13 @@
 nav ul {
     display: flex;
     gap: 50px;
-    text-align: justify;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 0;  
+    height: 90px;
+    background-color: rgb(0, 0, 0);
+    top: 0;
 }
 
 nav ul li {
@@ -11,7 +17,7 @@ nav ul li {
 a {
     text-decoration: none;
     cursor: pointer;
-    color: inherit; /* color heredado*/
+    color: rgb(255, 255, 255);
     font-weight: 500; /* grosor de trazo */
     font-size: 18px;
 }
