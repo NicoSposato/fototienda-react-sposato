@@ -2,20 +2,20 @@ import React from "react"
 import { useState } from "react"
 
 function ItemCount(props) {
-    let {stock} = props; 
+    let {stock, initial} = props; 
     console.log("stock:", stock);
-    const [count, setCount] = useState(1)
+    const [count, setCount] = useState(initial)
 
     function handleLess() {
         console.log(count);
-        if (count > 0 ) {
+        if (count > initial ) {
             setCount(count - 1);
         }
     }
 
     function handleAdd() {
         console.log(count);
-        if (count <= stock) {
+        if (count < stock) {
             setCount(count + 1);
         }   
     }

@@ -12,7 +12,9 @@ function App() {
       <Header />
       <ItemListContainer greeting="Elige como darle vida a tus fotos"/>
       <Wrapper>
-        <ItemCount />
+        <ItemCount initial={1} stock={15}/>
+        <br />
+        <ItemCount initial={6} stock={21}/>
       </Wrapper>
       <Footer />
     </div>
