@@ -3,8 +3,8 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 
 function CartWidget() {
     return (
-      <div>
-          <AiOutlineShoppingCart />
+      <div className="cartWait">
+          <a href="#"><AiOutlineShoppingCart /></a>
       </div>
     );
   }

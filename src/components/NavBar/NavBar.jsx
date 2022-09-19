@@ -4,7 +4,7 @@ import CartWidget from "../CartWidget/CartWidget";
 
 function NavBar() {
     return (
-        <nav className="navBar container">
+        <nav className="navBar container-fluid">
             <h1>
                 <span>Tu </span>Foto <span>Tienda</span> 
             </h1>

@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 import "./card.css";
 
 function Card(props) {
-    let {title, img, price, detail} = props; /* destructuring con variables aisladas*/
+    let {title, img, price, detail, stock} = props; /* destructuring con variables aisladas*/
 
     return (
         <div className="card">
@@ -14,6 +14,7 @@ function Card(props) {
             <h3>{title}</h3>
             <p>{detail}</p>
             <h4>$ {price}</h4>
+            
         </div>
         <Button>
             Ver

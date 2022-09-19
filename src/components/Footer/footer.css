@@ -9,6 +9,7 @@
 
 .footer__social {
     display: flex;
+    padding-left: 1%;
     gap: 40px;
     align-items: center;
 }

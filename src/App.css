@@ -61,6 +61,12 @@ body{
   margin: 0 auto;
 }
 
+.container-fluid {
+  max-width: 100%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
 .fondo__black {
   background-color: black;
 }
