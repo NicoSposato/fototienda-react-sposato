@@ -1,8 +1,9 @@
 import React from "react";
 import Button from "../Button/Button";
-import "./card.css";
+import ItemCount from "../ItemCount/ItemCount";
+import "./item.css";
 
-function Card(props) {
+function Item(props) {
     let {title, img, price, detail, stock} = props; /* destructuring con variables aisladas*/
 
     return (
@@ -23,4 +24,4 @@ function Card(props) {
     );
 }
 
-export default Card;
+export default Item;
