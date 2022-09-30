@@ -15,6 +15,7 @@ function Item(props) {
             <h3>{title}</h3>
             <p>{detail}</p>
             <h4>$ {price}</h4>
+            <h5>Stock: {stock}u.</h5>
             
         </div>
         <Button>

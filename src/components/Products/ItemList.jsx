@@ -13,6 +13,7 @@ function ItemList(props) {
                             title={item.title}
                             img={item.img}
                             detail={item.detail}
+                            stock={item.stock}
                         />
                         );    
                     })

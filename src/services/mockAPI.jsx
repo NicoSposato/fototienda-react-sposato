@@ -55,11 +55,20 @@ const data = [
     },
 ];
 
-export default function getProducts(){
+export default function getProducts() {
 
     return new Promise( (resolve, reject) => {
-        setTimeout( () =>{
+        setTimeout( () => {
             resolve(data);
-        }, 3000)
+        }, 3000);
+    })
+}
+
+export function getSingleProduct() {
+
+    return new Promise( (resolve, reject) => {
+        setTimeout( () => {
+            resolve(data[3]);
+        }, 1500);
     })
 }

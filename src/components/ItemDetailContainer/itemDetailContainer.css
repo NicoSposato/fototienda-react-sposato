@@ -1,0 +1,30 @@
+.card-title-detail{
+    min-height: 100vh;
+    align-items: center;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+.card-title-detail h3{
+    font-size: 1rem;
+    padding-top: 5vh;
+    padding-bottom: 2vh;
+}
+
+.cardDetail-img{
+    width: 680px;
+    height: 60px;
+  }
+.card-detail{
+    height: 260px;
+    padding-left: 60%;
+    text-align: right;
+    padding-right: 10%;
+    height: 100%;
+  }  
+
+.itemCount{
+    padding-top: 10%;
+    padding-right: 10%;
+    text-align: right;
+}

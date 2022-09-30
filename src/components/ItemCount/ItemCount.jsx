@@ -1,4 +1,5 @@
 import React from "react"
+import Button from "../Button/Button";
 import { useState } from "react"
 
 function ItemCount(props) {
@@ -31,7 +32,7 @@ function ItemCount(props) {
                 <span>{count}</span>
                 <button onClick={handleAdd}>+</button>
             </div>
-                <button onClick={onAddCart}>Agregar al carrito</button>
+                <Button onClick={onAddCart}>Agregar al carrito</Button>
         </div>
     )
 }
