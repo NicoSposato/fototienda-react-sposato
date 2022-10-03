@@ -1,10 +1,12 @@
 import React from "react";
 import Button from "../Button/Button";
-import ItemCount from "../ItemCount/ItemCount";
 import "./item.css";
+import { Link } from "react-router-dom";
 
 function Item(props) {
-    let {title, img, price, detail, stock} = props; /* destructuring con variables aisladas*/
+    let {title, img, price, detail, id} = props;
+
+    const urlDetail = `/producto/${id}`;
 
     return (
         <div className="card">
@@ -14,13 +16,14 @@ function Item(props) {
         <div className="card-detail">
             <h3>{title}</h3>
             <p>{detail}</p>
-            <h4>$ {price}</h4>
-            <h5>Stock: {stock}u.</h5>
-            
+            <h4>$ {price}</h4>    
         </div>
+
+    <Link to={urlDetail}>
         <Button>
             Ver
         </Button>
+    </Link>
         </div>
     );
 }

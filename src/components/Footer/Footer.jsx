@@ -1,5 +1,6 @@
 import "./footer.css";
 import { TiSocialFacebookCircular, TiSocialTwitterCircular, TiSocialVimeoCircular} from "react-icons/ti";
+import { Link } from "react-router-dom";
 
 function Footer() {
     return (
@@ -10,13 +11,13 @@ function Footer() {
             <div className="footer__social">
                 <p>Síguenos </p>
                 <div>
-                    <a href="#"><TiSocialFacebookCircular /></a>
+                    <Link to="#"><TiSocialFacebookCircular /></Link>
                 </div>
                 <div>
-                    <a href="#"><TiSocialTwitterCircular /></a>
+                    <Link to="#"><TiSocialTwitterCircular /></Link>
                 </div>
                 <div>
-                    <a href="#"><TiSocialVimeoCircular /></a>
+                    <Link to="#"><TiSocialVimeoCircular /></Link>
                 </div>
             </div>
         </div>

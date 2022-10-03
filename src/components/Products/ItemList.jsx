@@ -3,12 +3,13 @@ import Item from './Item';
 
 function ItemList(props) {
     return (
-        <div>
+        <div className="main container">
             {props.data.map( (item) => {
-                    console.log(item);
+                    // console.log(item);
                     return (
                         <Item
                             key={item.id}
+                            id={item.id}
                             price={item.price}
                             title={item.title}
                             img={item.img}

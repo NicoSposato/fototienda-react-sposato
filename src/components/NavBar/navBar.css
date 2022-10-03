@@ -1,9 +1,9 @@
 nav ul {
     display: flex;
-    gap: 50px;
-    justify-content: space-around;
+    gap: 5px;
+    justify-content:space-around;
     align-items: center;
-    width: 100%;
+    width: auto;
     margin: 0;  
     height: 90px;
     background-color: rgb(0, 0, 0);
@@ -19,5 +19,6 @@ a {
     cursor: pointer;
     color: rgb(255, 255, 255);
     font-weight: 500; /* grosor de trazo */
-    font-size: 18px;
+    font-size: 10rem ;
 }
+

@@ -6,7 +6,7 @@ const data = [
         detail: "Una experiencia envolvente y una perspectiva texturizada única.",
         img: "/assets/p/Lienzo_Canvas.webp",
         stock: 5,
-        category: "Canvas",
+        category: "canvas",
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ const data = [
         detail: "Diseño minimalista, terminaciones limpias y precisas. Con vidrio.",
         img: "/assets/p/Mural_Box.webp",
         stock: 18,
-        category: "Box",
+        category: "box",
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const data = [
         detail: "Un bastidor realizado en madera masiza. Sin vidrio.",
         img: "/assets/p/Bastidor_Simple.webp",
         stock: 200,
-        category: "Bastidor",
+        category: "bastidor",
     },
     {
         id: 4,
@@ -33,16 +33,16 @@ const data = [
         detail: "Un clásico entre los clásicos, con porte y gracia únicos. Con vidrio.",
         img: "/assets/p/Mural_Bombe.webp",
         stock: 30,
-        category: "Bombe",
+        category: "bombe",
     },
     {
         id: 5,
         title: "Mural italiano",
         price: 790,
         detail: "Exquisito, detallado y elegante diseño italiano. Con vidrio.",
-        img: "/assets/p/Mural_Iitaliano.webp",
+        img: "/assets/p/Mural_Italiano.webp",
         stock: 15,
-        category: "Italiano",
+        category: "italiano",
     },
     {
         id: 6,
@@ -51,7 +51,43 @@ const data = [
         detail: "Tradicional mural de varilla chata. Con vidrio.",
         img: "/assets/p/Mural_Chato.webp",
         stock: 10,
-        category: "Chato",
+        category: "chato",
+    },
+    {
+        id: 7,
+        title: "Triptico Lienzo Canvas",
+        price: 1900,
+        detail: "Una experiencia envolvente, con imagen repartida y una perspectiva texturizada única.",
+        img: "/assets/p/Lienzo_Canvas_triptico.webp",
+        stock: 30,
+        category: "canvas",
+    },
+    {
+        id: 8,
+        title: "Lienzo Canvas Rectangular",
+        price: 1550,
+        detail: "Una experiencia envolvente y una perspectiva texturizada única.",
+        img: "/assets/p/Lienzo_Canvas_rectangular.webp",
+        stock: 15,
+        category: "canvas",
+    },
+    {
+        id: 9,
+        title: "Mural italiano colores",
+        price: 1990,
+        detail: "Exquisito, detallado y coloridos de diseño italiano. Con vidrio.",
+        img: "/assets/p/Mural_Italiano_multicolor.webp",
+        stock: 10,
+        category: "italiano",
+    },
+    {
+        id: 10,
+        title: "Mural italiano rojo",
+        price: 2700,
+        detail: "Exquisito, detallado y llamativo diseño italiano. Con vidrio.",
+        img: "/assets/p/Mural_Italiano_rojo.webp",
+        stock: 12,
+        category: "italiano",
     },
 ];
 
@@ -64,11 +100,29 @@ export default function getProducts() {
     })
 }
 
-export function getSingleProduct() {
+export function getProductsByCategory(cat) {
+    return new Promise( (resolve, reject) => {
+        let itemFind = data.filter((item) => {  // Uso .filter para generar un nuevo array con todos los resultado
+            return item.category === cat;
+        });
+        setTimeout( () => {
+            console.log("Encontrados:",itemFind);
+            if (itemFind) resolve(itemFind);
+            else reject(new Error("No encontramos este item"));
+        }, 1500)
+    })
+}
+
+export function getSingleProduct(idItem) {
 
     return new Promise( (resolve, reject) => {
+        let itemFind = data.find((item) => {
+            console.log("find", item.id, idItem);
+            return item.id === parseInt(idItem);
+        });
         setTimeout( () => {
-            resolve(data[3]);
-        }, 1500);
+            if (itemFind) resolve (itemFind);
+            else reject(new Error("No encontramos este item"));
+        }, 1500)
     })
 }
