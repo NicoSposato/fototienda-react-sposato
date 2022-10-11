@@ -10,7 +10,7 @@ function Item(props) {
 
     return (
         <div className="card">
-            <div className="card-img">
+            <div onClick={props.onClickImagen} className="card-img">
             <img src={img} alt="card img"></img>
         </div>
         <div className="card-detail">
@@ -19,12 +19,12 @@ function Item(props) {
             <h4>$ {price}</h4>    
         </div>
 
-    <Link to={urlDetail}>
-        <Button>
-            Ver
-        </Button>
-    </Link>
-        </div>
+        <Link to={urlDetail}>
+            <Button>
+                Ver
+            </Button>
+        </Link>
+    </div>
     );
 }
 

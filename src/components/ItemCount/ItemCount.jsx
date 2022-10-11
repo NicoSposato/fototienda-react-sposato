@@ -1,21 +1,22 @@
 import React from "react"
 import Button from "../Button/Button";
-import { useState } from "react"
+import { useState } from "react";
+import "./itemCount.css";
 
 function ItemCount(props) {
     let {stock, initial} = props; 
-    console.log("stock:", stock);
+    //console.log("stock:", stock);
     const [count, setCount] = useState(initial)
 
     function handleLess() {
-        console.log(count);
+        //console.log(count);
         if (count > initial ) {
             setCount(count - 1);
         }
     }
 
     function handleAdd() {
-        console.log(count);
+        //console.log(count);
         if (count < stock) {
             setCount(count + 1);
         }   

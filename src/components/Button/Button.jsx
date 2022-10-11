@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./button.css";
 
-function Button({ children }) {
+function Button({ props }) {
   let [color, setColor] = useState("black");
 
   function handleClick() {
-    setColor("turquoise");
+    props.onClick();
+    setColor(color);
   }
 
   return (
@@ -14,7 +15,7 @@ function Button({ children }) {
       onClick={handleClick}
       className="btn"
     >
-      {children}
+      {props.children}
     </button>
   );
 }
