@@ -102,11 +102,10 @@ export default function getProducts() {
 
 export function getProductsByCategory(cat) {
     return new Promise( (resolve, reject) => {
-        let itemFind = data.filter((item) => {  // Uso .filter para generar un nuevo array con todos los resultado
+        let itemFind = data.filter((item) => {
             return item.category === cat;
         });
         setTimeout( () => {
-            console.log("Encontrados:",itemFind);
             if (itemFind) resolve(itemFind);
             else reject(new Error("No encontramos este item"));
         }, 1500)
@@ -117,7 +116,6 @@ export function getSingleProduct(idItem) {
 
     return new Promise( (resolve, reject) => {
         let itemFind = data.find((item) => {
-            console.log("find", item.id, idItem);
             return item.id === parseInt(idItem);
         });
         setTimeout( () => {

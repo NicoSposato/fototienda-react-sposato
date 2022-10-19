@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../Button/Button";
 import "./item.css";
 import { Link } from "react-router-dom";
 
@@ -20,9 +19,9 @@ function Item(props) {
         </div>
 
         <Link to={urlDetail}>
-            <Button>
+            <button>
                 Ver
-            </Button>
+            </button>
         </Link>
     </div>
     );
