@@ -4,9 +4,11 @@ import Footer from "./components/Footer/Footer";
 import ItemListContainer from "./components/Products/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MyProvider from "./components/Context/CartContext";
 
 function App() {
   return (
+    <MyProvider>
     <BrowserRouter>
     <div className="App">
       <Header />
@@ -16,10 +18,11 @@ function App() {
           <Route path="/producto/:id" element={<ItemDetailContainer/>}/>
           <Route path="*" element={<h1>404: La página no existe o la cambiamos de lugar.</h1>}/>
         </Routes>
-      
       <Footer />
     </div>
+    
     </BrowserRouter>
+    </MyProvider>
   );
 }
 
