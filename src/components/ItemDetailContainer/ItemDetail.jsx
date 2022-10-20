@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import FlexWrapper from "../FlexWrapper/FlexWrapper";
 import ItemCount from "../ItemCount/ItemCount";
-import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext";
 
 function ItemDetail({ props }) {
@@ -10,7 +9,7 @@ function ItemDetail({ props }) {
     const { addItem } = useContext(CartContext)
 
     const onAddToCart = () => {
-        addItem(item, cantidad)
+        addItem(props, cantidad)
     }
 
     function handleAddToCart(count) {   
@@ -29,7 +28,8 @@ function ItemDetail({ props }) {
                     <h5>Stock: {props.stock}u.</h5>
                 </div>
                 
-                { cantidad ? <ItemCount initial={1} stock={props.stock} onAddToCart={handleAddToCart} /> : <button>Finaliza tu compra</button>}
+                { cantidad ? <ItemCount initial={1} stock={props.stock} 
+                onAddToCart={handleAddToCart} /> : <button>Finaliza tu compra</button>}
             </div>
         </FlexWrapper>
     );
