@@ -6,6 +6,7 @@ const data = [
         detail: "Una experiencia envolvente y una perspectiva texturizada única.",
         img: "/assets/p/Lienzo_Canvas.webp",
         stock: 5,
+        offer: true,
         category: "canvas",
     },
     {
@@ -15,6 +16,7 @@ const data = [
         detail: "Diseño minimalista, terminaciones limpias y precisas. Con vidrio.",
         img: "/assets/p/Mural_Box.webp",
         stock: 18,
+        offer: false,
         category: "box",
     },
     {
@@ -24,6 +26,7 @@ const data = [
         detail: "Un bastidor realizado en madera masiza. Sin vidrio.",
         img: "/assets/p/Bastidor_Simple.webp",
         stock: 200,
+        offer: true,
         category: "bastidor",
     },
     {
@@ -33,6 +36,7 @@ const data = [
         detail: "Un clásico entre los clásicos, con porte y gracia únicos. Con vidrio.",
         img: "/assets/p/Mural_Bombe.webp",
         stock: 30,
+        offer: false,
         category: "bombe",
     },
     {
@@ -42,6 +46,7 @@ const data = [
         detail: "Exquisito, detallado y elegante diseño italiano. Con vidrio.",
         img: "/assets/p/Mural_Italiano.webp",
         stock: 15,
+        offer: false,
         category: "italiano",
     },
     {
@@ -51,6 +56,7 @@ const data = [
         detail: "Tradicional mural de varilla chata. Con vidrio.",
         img: "/assets/p/Mural_Chato.webp",
         stock: 10,
+        offer: false,
         category: "chato",
     },
     {
@@ -60,6 +66,7 @@ const data = [
         detail: "Una experiencia envolvente, con imagen repartida y una perspectiva texturizada única.",
         img: "/assets/p/Lienzo_Canvas_triptico.webp",
         stock: 30,
+        offer: true,
         category: "canvas",
     },
     {
@@ -69,6 +76,7 @@ const data = [
         detail: "Una experiencia envolvente y una perspectiva texturizada única.",
         img: "/assets/p/Lienzo_Canvas_rectangular.webp",
         stock: 15,
+        offer: true,
         category: "canvas",
     },
     {
@@ -78,6 +86,7 @@ const data = [
         detail: "Exquisito, detallado y coloridos de diseño italiano. Con vidrio.",
         img: "/assets/p/Mural_Italiano_multicolor.webp",
         stock: 10,
+        offer: false,
         category: "italiano",
     },
     {
@@ -87,6 +96,7 @@ const data = [
         detail: "Exquisito, detallado y llamativo diseño italiano. Con vidrio.",
         img: "/assets/p/Mural_Italiano_rojo.webp",
         stock: 12,
+        offer: true,
         category: "italiano",
     },
 ];

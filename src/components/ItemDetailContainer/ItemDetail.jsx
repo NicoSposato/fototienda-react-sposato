@@ -3,6 +3,7 @@ import FlexWrapper from "../FlexWrapper/FlexWrapper";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../Context/CartContext";
 
+
 function ItemDetail({ props }) {
     const [cantidad, setCantidad] = useState(true)
 
@@ -26,8 +27,10 @@ function ItemDetail({ props }) {
                     <p>{props.detail}</p>
                     <h4>$ {props.price}</h4>
                     <h5>Stock: {props.stock}u.</h5>
+                    {props.stock === 0 && (
+                        <span style={{ color: "#aa0033" }}>SIN STOCK</span>
+                    )}
                 </div>
-                
                 { cantidad ? <ItemCount initial={1} stock={props.stock} 
                 onAddToCart={handleAddToCart} /> : <button>Finaliza tu compra</button>}
             </div>

@@ -5,7 +5,6 @@ function ItemList(props) {
     return (
         <div className="main container">
             {props.data.map( (item) => {
-                    // console.log(item);
                     return (
                         <Item
                             key={item.id}
@@ -15,6 +14,7 @@ function ItemList(props) {
                             img={item.img}
                             detail={item.detail}
                             stock={item.stock}
+                            offer={item.offer}
                         />
                         );    
                     })

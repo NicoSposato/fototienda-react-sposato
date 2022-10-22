@@ -33,3 +33,12 @@
   small{
     color: #8c8c8e;
   }
+
+  .priceTag{
+    color: #444444;
+    font-weight: bolder;
+  }
+
+  .offerTag{
+    color: #15c42c
+  }

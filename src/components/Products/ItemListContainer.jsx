@@ -2,29 +2,74 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import getProducts, { getProductsByCategory } from "../../services/mockAPI";
 import ItemList from "./ItemList";
+import { Ring } from '@uiball/loaders'
 
 function ItemListContainer({greeting}) {
-    let [data, setData] = useState([]);
+    const [data, setData] = useState([]);
+    const [error, setError] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+
     const { cat } = useParams();
-    // console.log(useParams());
 
     useEffect( () => {
+        setData([]);
+        setIsLoading(true);
         if (cat === undefined){
-            getProducts().then((respuestaData) => setData(respuestaData));
+            getProducts()
+            .then((respuestaData) => setData(respuestaData))
+            .catch((errormsg) => {
+                setError(errormsg.message);
+            })
+            .finally (() => setIsLoading(false));
         } 
         else {
-            getProductsByCategory(cat).then((respuestaData) => setData(respuestaData));
+            getProductsByCategory(cat)
+            .then((respuestaData) => setData(respuestaData))
+            .catch((errormsg) => {
+                setError(errormsg.message);
+            })
+            .finally (() => setIsLoading(false));
         }
-    }, [cat] );   // agrego la variable cat para detectar si hay cambios y que vuelva a ejecutar el efecto
+    }, [cat] );
+
+    if (isLoading) {
+        return (<>
+            { error ? (
+                <div>
+                    <h2>Error cargando datos</h2>
+                    <p>{error}</p>
+                </div>
+            ) : (
+                <Ring 
+                size={50}
+                lineWeight={5}
+                speed={2} 
+                color="black" 
+                />
+            )}
+            </>
+        )        
+    }
 
     return (
         <div>
-            <h1>{greeting}</h1>
+            {isLoading ? 
+            <Ring 
+                size={50}
+                lineWeight={5}
+                speed={2} 
+                color="black" 
+                /> 
+            : 
             <div>
-                <ItemList 
-                data={data} 
-                />
-            </div>
+                <h1>{greeting}</h1>
+                    <div>
+                        <ItemList 
+                            data={data} 
+                        />
+                    </div>
+            </div>}
+            
         </div>
     );
 }
