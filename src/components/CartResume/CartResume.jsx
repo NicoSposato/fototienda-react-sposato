@@ -1,10 +1,10 @@
-import React from 'react'
-import { useContext } from "react";
-import { CartContext } from "../Context/CartContext";
+import React, { useContext } from 'react';
+import { cartContext } from "../Context/CartContext";
+import { Link } from "react-router-dom";
 
 function CartResume() {
-    const context = useContext(CartContext);
-    const { cart, isInCart, addItem, emptyCart, deleteItem, getItemCount, getTotalPrice } = context;
+    
+    const { cart, isInCart, addItem, emptyCart, deleteItem, getItemCount, getTotalPrice } = useContext(cartContext);
 
     let carritoVacio = true; 
 
@@ -23,7 +23,7 @@ function CartResume() {
                     <h3>{item.title}</h3>
                     <p>{item.price}</p>
                     <p>{item.count}</p>
-                    
+
                 </div>
             ))}
         </div>

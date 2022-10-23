@@ -1,48 +1,50 @@
 import React, { createContext, useState } from "react";
 
-export const CartContext = createContext();
+const cartContext = createContext();
 
-const { Provider } = CartContext;
+const { Provider } = cartContext;
 
-const MyProvider = ({children}) => { 
+export default function MyProvider ({ children }) { 
 
     const [cart, setCart] = useState([]);
 
-    const isInCart = (id) => {
+    function isInCart(id) {
         return cart.some(prod => prod.id === id)
     }
 
-    const addItem = (props, cantidad) => {
-        const nwItem = {...props, cantidad};
+    function addItem(props, count) {
+        const nwItem = {...props, count};
 
         if (isInCart(nwItem.id)) {
             const productFind = cart.find(prod => prod.id === nwItem.id);
             const productIndex = cart.indexOf(productFind);
-            const auxCart = [...cart];
-            auxCart[productIndex].cantidad += cantidad
+            const auxCart = [...cart]
+            auxCart[productIndex].count += count
             setCart(auxCart);
         } else {
             setCart([...cart, nwItem]);
         }
     };
 
-    const emptyCart = () => {
+    function emptyCart() {
         return setCart([])
     };
 
-    const deleteItem = (id) => {
+    function deleteItem(id) {
         return setCart(cart.filter(prod => prod.id !== id))
     };
 
-    const getItemCount = () => {
-        return cart.reduce((acc, prod) => acc += prod.cantidad, 0)
+    function getItemCount() {
+        return cart.reduce((acc, prod) => acc += prod.count, 0)
     };
 
-    const getTotalPrice = () => {
-        return cart.reduce((acc, prod) => acc += prod.price * prod.cantidad, 0)
+    function getTotalPrice() {
+        return cart.reduce((acc, prod) => acc += prod.price * prod.count, 0)
     };
 
-    return (<Provider value={{cart, isInCart, addItem, emptyCart, deleteItem, getItemCount, getTotalPrice}}>{children}</Provider>)
+    return (
+        <Provider value={{ cart, isInCart, addItem, emptyCart, deleteItem, getItemCount, getTotalPrice }}>{children}</Provider>
+    )
 }
 
-export default MyProvider
+export { cartContext }

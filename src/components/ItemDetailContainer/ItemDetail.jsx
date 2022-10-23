@@ -1,20 +1,17 @@
 import React, { useContext, useState } from "react";
 import FlexWrapper from "../FlexWrapper/FlexWrapper";
 import ItemCount from "../ItemCount/ItemCount";
-import { CartContext } from "../Context/CartContext";
+import { cartContext } from "../Context/CartContext";
+import { Link } from "react-router-dom";
 
 
 function ItemDetail({ props }) {
     const [cantidad, setCantidad] = useState(true)
 
-    const { addItem } = useContext(CartContext)
-
-    const onAddToCart = () => {
-        addItem(props, cantidad)
-    }
+    const { addItem } = useContext(cartContext)
 
     function handleAddToCart(count) {   
-        alert(`Agregaste correctamente al carrito ${count} productos.`);
+        addItem(props,count)
         setCantidad(false);   
     }   
 
@@ -32,7 +29,7 @@ function ItemDetail({ props }) {
                     )}
                 </div>
                 { cantidad ? <ItemCount initial={1} stock={props.stock} 
-                onAddToCart={handleAddToCart} /> : <button>Finaliza tu compra</button>}
+                onAddToCart={handleAddToCart} /> : <Link to="/cart"><button>Finaliza tu compra</button></Link>}
             </div>
         </FlexWrapper>
     );
