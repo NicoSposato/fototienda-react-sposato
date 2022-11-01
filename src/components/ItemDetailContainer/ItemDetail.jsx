@@ -4,7 +4,6 @@ import ItemCount from "../ItemCount/ItemCount";
 import { cartContext } from "../Context/CartContext";
 import { Link } from "react-router-dom";
 
-
 function ItemDetail({ props }) {
     const [cantidad, setCantidad] = useState(true)
 

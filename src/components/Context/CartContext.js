@@ -1,7 +1,6 @@
 import React, { createContext, useState } from "react";
 
 const cartContext = createContext();
-
 const { Provider } = cartContext;
 
 export default function MyProvider ({ children }) { 

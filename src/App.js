@@ -5,8 +5,8 @@ import ItemListContainer from "./components/Products/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MyProvider from "./components/Context/CartContext";
-import Cart from "./components/CartResume/CartResume";
 import CartResume from "./components/CartResume/CartResume";
+import FormBuy from './components/FormBuy/FormBuy';
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
               <Route path="/categoria/:cat" element={<ItemListContainer/>}/>
               <Route path="/producto/:id" element={<ItemDetailContainer/>}/>
               <Route path="/cart" element={<CartResume/>}/>
+              <Route path="/formBuy" element={<FormBuy />}></Route>
               <Route path="*" element={<h1>404: La página no existe o la cambiamos de lugar.</h1>}/>
             </Routes>
           <Footer />
