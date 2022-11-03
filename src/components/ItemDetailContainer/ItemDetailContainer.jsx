@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react"
-import { getSingleProduct } from "../../services/mockAPI";
+import { getSingleItem, getItemsByCategory } from "../../services/firestore";
 import { useParams } from "react-router-dom";
 import "./itemDetailContainer.css";
 import ItemDetail from "./ItemDetail";
@@ -11,7 +11,7 @@ function ItemDetailContainer() {
     const { id } = useParams(); 
 
     useEffect(() => {
-        getSingleProduct(id)
+        getSingleItem(id)
         .then((recibeDatos) => setData(recibeDatos))
         .catch((errormsg) => {
             setError(errormsg.message);

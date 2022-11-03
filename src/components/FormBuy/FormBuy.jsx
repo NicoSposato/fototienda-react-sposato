@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { Form, Col, Row, Container } from 'react-bootstrap';
-import { CartContext } from '../Context/CartContext';
-import { orderBuy } from "../../services/firestore";
+import { cartContext } from '../Context/CartContext';
+import { getItems } from "../../services/firestore";
 import { Button } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -15,7 +15,7 @@ function FormBuy() {
     email: ""
   });
 
-  const { cart, totalPriceItem } = useContext(CartContext);
+  const { cart, totalPriceItem } = useContext(cartContext);
   const navigate = useNavigate();
 
   function InputForm(event) {
@@ -34,7 +34,7 @@ function FormBuy() {
       date: new Date(),
       total: totalPriceItem(),
     };
-    orderBuy(orderData).then(navigate(`/`));
+    getItems(orderData).then(navigate(`/`));
     Swal.fire({
       title: "Felicitaciones por tu compra",
       icon: "success",

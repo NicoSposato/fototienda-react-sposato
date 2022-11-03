@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import getProducts, { getProductsByCategory } from "../../services/mockAPI";
+import { getItems, getItemsByCategory } from "../../services/firestore";
 import ItemList from "./ItemList";
 import { Ring } from '@uiball/loaders'
 
@@ -15,7 +15,7 @@ function ItemListContainer({greeting}) {
         setData([]);
         setIsLoading(true);
         if (cat === undefined){
-            getProducts()
+            getItems()
             .then((respuestaData) => setData(respuestaData))
             .catch((errormsg) => {
                 setError(errormsg.message);
@@ -23,7 +23,7 @@ function ItemListContainer({greeting}) {
             .finally (() => setIsLoading(false));
         } 
         else {
-            getProductsByCategory(cat)
+            getItemsByCategory(cat)
             .then((respuestaData) => setData(respuestaData))
             .catch((errormsg) => {
                 setError(errormsg.message);
